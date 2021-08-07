@@ -7,5 +7,5 @@ onElInput.addEventListener('input', getNameInput)
 function getNameInput(event) {
   const input = event.currentTarget;
 
-  onElSpan.textContent = input.value ? input.value : 'незнакомец';
+  onElSpan.textContent = input.value ? input.value : 'незнайомець';
 }
