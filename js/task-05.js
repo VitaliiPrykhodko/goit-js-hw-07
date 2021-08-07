@@ -3,6 +3,9 @@ const onElSpan = document.querySelector('#name-output')
 
 onElInput.addEventListener('input', getNameInput)
 
-function getNameInput(even) {
-    onElSpan.textContent = even.currentTarget.value;
+
+function getNameInput(event) {
+  const input = event.currentTarget;
+
+  onElSpan.textContent = input.value ? input.value : 'незнакомец';
 }
