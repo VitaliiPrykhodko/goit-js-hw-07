@@ -1,14 +1,14 @@
 const onElInput = document.querySelector('#validation-input')
 
-onElInput.addEventListener('change', changeBorderColor)
+onElInput.addEventListener('blur', changeBorderColor)
 
 function changeBorderColor(even) {
-    const dataValue = Number(onElInput.dataset.length)
-    if (dataValue !== even.currentTarget.value.length) {
-    return  onElInput.classList.add('invalid')
+    let dataValue = Number(onElInput.dataset.length)
+    onElInput.classList.add('invalid');
+    if (dataValue === even.currentTarget.value.length) {
+        onElInput.classList.replace('invalid', 'valid')
+    } else {
+        onElInput.classList.replace('valid', 'invalid')
     }
-   
-     return onElInput.classList.replace('invalid', 'valid')
-    
 }
 

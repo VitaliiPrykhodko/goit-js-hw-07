@@ -4,7 +4,7 @@ const onElSpan = document.querySelector('#text')
 onElInput.addEventListener('input', upSizeTextSpan)
 
 function upSizeTextSpan(even) {
-    onElSpan.style.fontSize = `${even.currentTarget.value}px`;
+    const inputElem = even.target.value;
+    
+    onElSpan.style.fontSize = `${inputElem}px`;
 }
-
-

@@ -9,17 +9,19 @@ const images = [
   },
   {
     url: 'https://images.pexels.com/photos/219943/pexels-photo-219943.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
-    alt: 'Group of Horses Running',
-  },
+    alt: 'Group of Horses Running'
+  }
 ];
 
-const onListEl = document.querySelector('#gallery');
+
 
 function makeGallery(imageArr) {
+  const onListEl = document.querySelector('#gallery');
+
   onListEl.classList.add('ul-container');
   
-  const markUpString = imageArr.map(
-    (item) => `<li><img class="image" src="${item.url} alt="${item.alt}" width="300" height="200"></li>`
+  const markUpString = imageArr.reduce(
+    (string, item) => string + `<li><img class="image" src="${item.url} alt="${item.alt}" width="300" height="200"></li>`, ""
   );
   
   onListEl.insertAdjacentHTML('afterbegin', markUpString);  
